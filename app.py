@@ -160,7 +160,7 @@ if login_btn and role == "Teacher":
     ]
 
     st.dataframe(
-        risk_table.style.applymap(
+        risk_table.style.map(
             lambda x: "background-color: #ff8080" if x == "At Risk" else "",
             subset=["Risk_Label"]
         ),
@@ -178,7 +178,7 @@ if login_btn and role == "Teacher":
     ]
 
     st.dataframe(
-        safe_table.style.applymap(
+        safe_table.style.map(
             lambda x: "background-color: #80ff80" if x == "Safe" else "",
             subset=["Risk_Label"]
         ),
@@ -302,4 +302,5 @@ else:
         "<strong>👉 Please select a role and click <strong style=\"color: #8698bc;\">Login</strong> from the sidebar to proceed.</strong>"
         "</p></div>",
         unsafe_allow_html=True
+
     )
